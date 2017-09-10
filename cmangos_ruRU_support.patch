@@ -1,18 +1,23 @@
-d6008f5a0378e0ab0176ba9ac975f7aaa93f7d0b
- src/game/Chat.cpp     |  4 ++--
- src/game/Level1.cpp   |  4 ++--
- src/game/Level2.cpp   |  8 ++++----
- src/game/Level3.cpp   | 16 ++++++++--------
- src/game/World.cpp    | 12 ++++++------
- src/shared/Common.cpp |  2 ++
- src/shared/Common.h   |  4 +++-
+From 55e2beab9f22b2ae7bbc539650cb20b726bb1951 Mon Sep 17 00:00:00 2001
+From: sidsukana <pgsilent@gmail.com>
+Date: Sun, 2 Jul 2017 22:56:59 +0500
+Subject: [PATCH] ruRU
+
+---
+ src/game/Chat/Chat.cpp   |  4 ++--
+ src/game/Chat/Level1.cpp |  4 ++--
+ src/game/Chat/Level2.cpp |  8 ++++----
+ src/game/Chat/Level3.cpp | 16 ++++++++--------
+ src/game/World/World.cpp | 12 ++++++------
+ src/shared/Common.cpp    |  2 ++
+ src/shared/Common.h      |  4 +++-
  7 files changed, 27 insertions(+), 23 deletions(-)
 
-diff --git a/src/game/Chat.cpp b/src/game/Chat.cpp
-index 66cdcb3..0745070 100644
---- a/src/game/Chat.cpp
-+++ b/src/game/Chat.cpp
-@@ -1761,7 +1761,7 @@ bool ChatHandler::isValidChatMessage(const char* message)
+diff --git a/src/game/Chat/Chat.cpp b/src/game/Chat/Chat.cpp
+index a88326fd5..d73073bb4 100644
+--- a/src/game/Chat/Chat.cpp
++++ b/src/game/Chat/Chat.cpp
+@@ -1797,7 +1797,7 @@ bool ChatHandler::isValidChatMessage(const char* message) const
                                  return false;
                              }
  
@@ -21,7 +26,7 @@ index 66cdcb3..0745070 100644
                              {
                                  uint32 skillLineNameLength = strlen(skillLine->name[i]);
                                  if (skillLineNameLength > 0 && strncmp(skillLine->name[i], buffer, skillLineNameLength) == 0)
-@@ -1774,7 +1774,7 @@ bool ChatHandler::isValidChatMessage(const char* message)
+@@ -1810,7 +1810,7 @@ bool ChatHandler::isValidChatMessage(const char* message) const
                              }
                          }
                          bool foundName = false;
@@ -30,10 +35,10 @@ index 66cdcb3..0745070 100644
                          {
                              if (*linkedSpell->SpellName[i] && strcmp(linkedSpell->SpellName[i], buffer) == 0)
                              {
-diff --git a/src/game/Level1.cpp b/src/game/Level1.cpp
-index 546c4eb..eb8e82c 100644
---- a/src/game/Level1.cpp
-+++ b/src/game/Level1.cpp
+diff --git a/src/game/Chat/Level1.cpp b/src/game/Chat/Level1.cpp
+index 43fd8378b..d882443ac 100644
+--- a/src/game/Chat/Level1.cpp
++++ b/src/game/Chat/Level1.cpp
 @@ -1519,7 +1519,7 @@ bool ChatHandler::HandleLookupAreaCommand(char* args)
              if (!Utf8FitTo(name, wnamepart))
              {
@@ -52,11 +57,11 @@ index 546c4eb..eb8e82c 100644
              {
                  // send area in "id - [name]" format
                  std::ostringstream ss;
-diff --git a/src/game/Level2.cpp b/src/game/Level2.cpp
-index fba061b..d684bd2 100644
---- a/src/game/Level2.cpp
-+++ b/src/game/Level2.cpp
-@@ -1263,7 +1263,7 @@ bool ChatHandler::HandleLookupFactionCommand(char* args)
+diff --git a/src/game/Chat/Level2.cpp b/src/game/Chat/Level2.cpp
+index dd008e818..a0a143269 100644
+--- a/src/game/Chat/Level2.cpp
++++ b/src/game/Chat/Level2.cpp
+@@ -1256,7 +1256,7 @@ bool ChatHandler::HandleLookupFactionCommand(char* args)
              if (!Utf8FitTo(name, wnamepart))
              {
                  loc = 0;
@@ -65,7 +70,7 @@ index fba061b..d684bd2 100644
                  {
                      if (loc == GetSessionDbcLocale())
                          continue;
-@@ -1277,7 +1277,7 @@ bool ChatHandler::HandleLookupFactionCommand(char* args)
+@@ -1270,7 +1270,7 @@ bool ChatHandler::HandleLookupFactionCommand(char* args)
                  }
              }
  
@@ -74,7 +79,7 @@ index fba061b..d684bd2 100644
              {
                  FactionState const* repState = target ? target->GetReputationMgr().GetState(factionEntry) : nullptr;
                  ShowFactionListHelper(factionEntry, LocaleConstant(loc), repState, target);
-@@ -3990,7 +3990,7 @@ bool ChatHandler::HandleLearnAllRecipesCommand(char* args)
+@@ -3977,7 +3977,7 @@ bool ChatHandler::HandleLearnAllRecipesCommand(char* args)
          if (!Utf8FitTo(name, wnamepart))
          {
              loc = 0;
@@ -83,7 +88,7 @@ index fba061b..d684bd2 100644
              {
                  if (loc == GetSessionDbcLocale())
                      continue;
-@@ -4004,7 +4004,7 @@ bool ChatHandler::HandleLearnAllRecipesCommand(char* args)
+@@ -3991,7 +3991,7 @@ bool ChatHandler::HandleLearnAllRecipesCommand(char* args)
              }
          }
  
@@ -92,11 +97,11 @@ index fba061b..d684bd2 100644
          {
              targetSkillInfo = skillInfo;
              break;
-diff --git a/src/game/Level3.cpp b/src/game/Level3.cpp
-index fa6b96d..cd443cb 100644
---- a/src/game/Level3.cpp
-+++ b/src/game/Level3.cpp
-@@ -2712,7 +2712,7 @@ bool ChatHandler::HandleLookupItemSetCommand(char* args)
+diff --git a/src/game/Chat/Level3.cpp b/src/game/Chat/Level3.cpp
+index 649569dd3..7969e0842 100644
+--- a/src/game/Chat/Level3.cpp
++++ b/src/game/Chat/Level3.cpp
+@@ -2765,7 +2765,7 @@ bool ChatHandler::HandleLookupItemSetCommand(char* args)
              if (!Utf8FitTo(name, wnamepart))
              {
                  loc = 0;
@@ -105,7 +110,7 @@ index fa6b96d..cd443cb 100644
                  {
                      if (loc == GetSessionDbcLocale())
                          continue;
-@@ -2726,7 +2726,7 @@ bool ChatHandler::HandleLookupItemSetCommand(char* args)
+@@ -2779,7 +2779,7 @@ bool ChatHandler::HandleLookupItemSetCommand(char* args)
                  }
              }
  
@@ -114,7 +119,7 @@ index fa6b96d..cd443cb 100644
              {
                  // send item set in "id - [namedlink locale]" format
                  if (m_session)
-@@ -2775,7 +2775,7 @@ bool ChatHandler::HandleLookupSkillCommand(char* args)
+@@ -2828,7 +2828,7 @@ bool ChatHandler::HandleLookupSkillCommand(char* args)
              if (!Utf8FitTo(name, wnamepart))
              {
                  loc = 0;
@@ -123,7 +128,7 @@ index fa6b96d..cd443cb 100644
                  {
                      if (loc == GetSessionDbcLocale())
                          continue;
-@@ -2789,7 +2789,7 @@ bool ChatHandler::HandleLookupSkillCommand(char* args)
+@@ -2842,7 +2842,7 @@ bool ChatHandler::HandleLookupSkillCommand(char* args)
                  }
              }
  
@@ -132,7 +137,7 @@ index fa6b96d..cd443cb 100644
              {
                  char valStr[50] = "";
                  char const* knownStr = "";
-@@ -2900,7 +2900,7 @@ bool ChatHandler::HandleLookupSpellCommand(char* args)
+@@ -2953,7 +2953,7 @@ bool ChatHandler::HandleLookupSpellCommand(char* args)
              if (!Utf8FitTo(name, wnamepart))
              {
                  loc = 0;
@@ -141,7 +146,7 @@ index fa6b96d..cd443cb 100644
                  {
                      if (loc == GetSessionDbcLocale())
                          continue;
-@@ -2914,7 +2914,7 @@ bool ChatHandler::HandleLookupSpellCommand(char* args)
+@@ -2967,7 +2967,7 @@ bool ChatHandler::HandleLookupSpellCommand(char* args)
                  }
              }
  
@@ -150,7 +155,7 @@ index fa6b96d..cd443cb 100644
              {
                  ShowSpellListHelper(target, spellInfo, LocaleConstant(loc));
                  ++counter;
-@@ -3139,7 +3139,7 @@ bool ChatHandler::HandleLookupTaxiNodeCommand(char* args)
+@@ -3192,7 +3192,7 @@ bool ChatHandler::HandleLookupTaxiNodeCommand(char* args)
              if (!Utf8FitTo(name, wnamepart))
              {
                  loc = 0;
@@ -159,7 +164,7 @@ index fa6b96d..cd443cb 100644
                  {
                      if (loc == GetSessionDbcLocale())
                          continue;
-@@ -3153,7 +3153,7 @@ bool ChatHandler::HandleLookupTaxiNodeCommand(char* args)
+@@ -3206,7 +3206,7 @@ bool ChatHandler::HandleLookupTaxiNodeCommand(char* args)
                  }
              }
  
@@ -168,11 +173,11 @@ index fa6b96d..cd443cb 100644
              {
                  // send taxinode in "id - [name] (Map:m X:x Y:y Z:z)" format
                  if (m_session)
-diff --git a/src/game/World.cpp b/src/game/World.cpp
-index 7aee66a..8f97c21 100644
---- a/src/game/World.cpp
-+++ b/src/game/World.cpp
-@@ -1276,9 +1276,9 @@ void World::DetectDBCLang()
+diff --git a/src/game/World/World.cpp b/src/game/World/World.cpp
+index ca5a02d70..5fa761b12 100644
+--- a/src/game/World/World.cpp
++++ b/src/game/World/World.cpp
+@@ -1304,9 +1304,9 @@ void World::DetectDBCLang()
  {
      uint32 m_lang_confid = sConfig.GetIntDefault("DBC.Locale", 255);
  
@@ -184,7 +189,7 @@ index 7aee66a..8f97c21 100644
          m_lang_confid = LOCALE_enUS;
      }
  
-@@ -1287,8 +1287,8 @@ void World::DetectDBCLang()
+@@ -1315,8 +1315,8 @@ void World::DetectDBCLang()
  
      std::string availableLocalsStr;
  
@@ -195,7 +200,7 @@ index 7aee66a..8f97c21 100644
      {
          if (strlen(race->name[i]) > 0)                      // check by race names
          {
-@@ -1299,13 +1299,13 @@ void World::DetectDBCLang()
+@@ -1327,13 +1327,13 @@ void World::DetectDBCLang()
          }
      }
  
@@ -212,7 +217,7 @@ index 7aee66a..8f97c21 100644
          sLog.outError("Unable to determine your DBC Locale! (corrupt DBC?)");
          Log::WaitBeforeContinueIfNeed();
 diff --git a/src/shared/Common.cpp b/src/shared/Common.cpp
-index 17b925c..f8ea2e3 100644
+index 17b925c52..f8ea2e3fc 100644
 --- a/src/shared/Common.cpp
 +++ b/src/shared/Common.cpp
 @@ -28,6 +28,7 @@ char const* localeNames[MAX_LOCALE] =
@@ -232,10 +237,10 @@ index 17b925c..f8ea2e3 100644
  };
  
 diff --git a/src/shared/Common.h b/src/shared/Common.h
-index 9fdea47..78a3c42 100644
+index 41666942d..0edcc2bb2 100644
 --- a/src/shared/Common.h
 +++ b/src/shared/Common.h
-@@ -168,9 +168,11 @@ enum LocaleConstant
+@@ -145,9 +145,11 @@ enum LocaleConstant
      LOCALE_zhTW = 5,
      LOCALE_esES = 6,
      LOCALE_esMX = 7,
